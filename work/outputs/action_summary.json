@@ -1,0 +1,29 @@
+{
+  "generated_from": "content_refresh_anonymized.csv (30,000-row starter sample)",
+  "model": {
+    "type": "RandomForestClassifier(n_estimators=300, max_depth=10, class_weight=balanced)",
+    "split": "client-grouped holdout, same validation design as w06_validation_audit.ipynb",
+    "validated_metrics": {
+      "P@50": 0.56,
+      "P@20": 0.5,
+      "ROC_AUC": 0.661,
+      "base_rate": 0.484
+    }
+  },
+  "action_counts": {
+    "monitor": 14548,
+    "refresh_review": 12482,
+    "protect": 1652,
+    "refresh_priority": 1318
+  },
+  "total_rows_scored": 30000,
+  "value_at_risk_usd": 126219.79,
+  "value_proxy_formula": "clicks_90d * cpc (not impressions * cpc -- impressions aren't billable)",
+  "reason_codes_used": [
+    "stale_ctr_underperformer",
+    "high_decline_risk",
+    "deep_thin_content",
+    "mature_never_refreshed",
+    "stable_top_performer"
+  ]
+}
